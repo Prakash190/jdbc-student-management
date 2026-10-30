@@ -2,6 +2,7 @@
 out/
 target/
 *.class
+lib/*.jar
 
 # IDE files
 .idea/
