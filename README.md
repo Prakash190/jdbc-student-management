@@ -50,12 +50,11 @@ java -cp $cp com.prakash.jdbc.Application
 
 ## Run without Maven
 
-1. Download MySQL Connector/J and place its JAR in a `lib` folder.
-2. Compile and run:
+From PowerShell, run the launcher. It downloads MySQL Connector/J when needed, asks for your MySQL password without saving it, compiles, and starts the program.
 
 ```powershell
-javac -d out (Get-ChildItem -Recurse -Filter *.java src/main/java | ForEach-Object FullName)
-java -cp "out;lib/mysql-connector-j-8.4.0.jar" com.prakash.jdbc.Application
+Set-ExecutionPolicy -Scope Process Bypass
+.\run.ps1
 ```
 
 ## Project structure
@@ -66,6 +65,7 @@ src/main/java/com/prakash/jdbc/
 ├── Database.java      # Connection settings and schema initialization
 ├── Student.java       # Domain model
 └── StudentDao.java    # JDBC CRUD queries
+run.ps1                # One-command Windows launcher
 ```
 
 ## JDBC concepts demonstrated
